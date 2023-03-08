@@ -5,7 +5,19 @@ import 'package:hamzah_batik_app/sign_up_page.dart';
 
 void main()
 {
-  // runApp(const HomePage());
-  // runApp(const SignInPage());
-  runApp(SignUpPage());
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      // home: HomePage(),
+      home: SignInPage(),
+      // home: SignUpPage()
+    );
+  }
 }

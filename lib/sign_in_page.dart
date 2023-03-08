@@ -9,14 +9,10 @@ class SignInPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        backgroundColor: const Color(0xFFf9f9f9),
-        // appBar: AppBar(
-        //   backgroundColor: const Color(0xFFD9D9D9),
-        // ),
-        body: SafeArea(
+    return Scaffold(
+      backgroundColor: const Color(0xFFf9f9f9),
+      body: SafeArea(
+        child: SingleChildScrollView(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
@@ -95,7 +91,7 @@ class SignInPage extends StatelessWidget {
                       ],
                     ),
                     const SizedBox(height: 34),
-                    TextButton(
+                    ElevatedButton(
                       onPressed: () {},
                       style: ButtonStyle(
                           foregroundColor:
@@ -104,8 +100,7 @@ class SignInPage extends StatelessWidget {
                               MaterialStateProperty.all<Color>(Colors.blue)),
                       child: const Text(
                         "Sign In",
-                        style: TextStyle(
-                            fontSize: 20, fontWeight: FontWeight.w300),
+                        style: TextStyle(fontSize: 20),
                       ),
                     ),
                     const SizedBox(
@@ -127,9 +122,7 @@ class SignInPage extends StatelessWidget {
                     ),
                     Container(
                         margin: const EdgeInsets.symmetric(horizontal: 20),
-                        child: const Text(
-                          "atau",
-                        )),
+                        child: const Text("atau")),
                     const SizedBox(
                         width: 116,
                         child: Divider(
@@ -137,30 +130,27 @@ class SignInPage extends StatelessWidget {
                         ))
                   ],
                 ),
-              ), //divider atau
+              ),
               Container(
                 width: 282,
                 height: 45,
-                padding: const EdgeInsets.all(5),
-                decoration: BoxDecoration(
-                    color: Colors.white,
-                    border:
-                        Border.all(color: const Color(0xffD9D9D9), width: 1),
-                    borderRadius: const BorderRadius.all(Radius.circular(10))),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    const Image(
-                      image: AssetImage('images/google.png'),
+                margin: EdgeInsets.only(bottom: 10),
+                child: ElevatedButton(
+                    onPressed: () {},
+                    style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all(Colors.white),
+                      foregroundColor: MaterialStateProperty.all(Colors.black),
                     ),
-                    TextButton(
-                        onPressed: () {},
-                        child: const Text(
-                          "Masuk dengan Google",
-                          style: TextStyle(color: Colors.black),
-                        ))
-                  ],
-                ),
+                    child: Container(
+                      padding: EdgeInsets.all(5),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          Image.asset('images/google.png'),
+                          Text("Masuk dengan Google")
+                        ],
+                      ),
+                    )),
               )
             ],
           ),

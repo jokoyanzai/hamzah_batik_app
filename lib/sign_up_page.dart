@@ -9,12 +9,11 @@ class SignUpPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        backgroundColor: const Color(0xFFf9f9f9),
-        body: SafeArea(
-            child: Column(
+    return Scaffold(
+      backgroundColor: const Color(0xFFf9f9f9),
+      body: SafeArea(
+          child: SingleChildScrollView(
+        child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             const SizedBox(height: 63),
@@ -25,7 +24,7 @@ class SignUpPage extends StatelessWidget {
                 children: const [Icon(Icons.arrow_back_ios), Text("Kembali")],
               ),
             ),
-            const Spacer(),
+            // const Spacer(),
             Card(
               margin: const EdgeInsets.all(10),
               shape: RoundedRectangleBorder(
@@ -126,32 +125,17 @@ class SignUpPage extends StatelessWidget {
                             ),
                           ),
                         ),
-                        Container(
-                          margin: const EdgeInsets.all(10),
-                          child: TextButton(
-                              onPressed: () {},
-                              style: ButtonStyle(
-                                  foregroundColor:
-                                      MaterialStateProperty.all<Color>(
-                                          Colors.white),
-                                  backgroundColor:
-                                      MaterialStateProperty.all<Color>(
-                                          Colors.blue)),
-                              child: const Text(
-                                "Buat Akun",
-                                style: TextStyle(fontSize: 16),
-                              )),
-                        )
+                        ElevatedButton(onPressed: () {}, child: Text("Buat Akun"))
                       ],
                     )),
                   )
                 ],
               ),
             ),
-            const Spacer()
+            // const Spacer()
           ],
-        )),
-      ),
+        ),
+      )),
     );
   }
 }
